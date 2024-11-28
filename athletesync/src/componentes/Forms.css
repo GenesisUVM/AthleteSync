@@ -9,7 +9,12 @@ form{
    
 }
 
-
+.formCrearCompetencia{
+    display: flex;
+    top: 25%;
+    margin: auto;
+    flex-direction: column;
+}
 
 
 .inputT, .diasEjercicios{
@@ -27,8 +32,9 @@ form{
 
 }
 
-.diasEjercicios option{
+.categoría option{
     color: #000;
+    background: #85BDBF;
 }
 
 .reloj{
@@ -36,7 +42,7 @@ form{
     
 }
 
-.input{
+.input, .categoría{
     width: 85%;
     font-size: 1.2rem;
     display: flex;

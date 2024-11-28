@@ -21,7 +21,7 @@ function FormCreaUsuario(){
             <label className='label'>Ingrese Telefono<input type="number" name="telefono" className="input" {...register( 'numero', { require : true })}/></label>
             <label className='label'>Ingrese Categoria en que compite<input type="text" name="rol" className="input" {...register( 'rol', { require : true })}/></label>
             <button type='submit' className="botonIngresar">Ingresar</button>
-            <Link to={''} className="botonIngresar">Registrar</Link>
+            <Link to={'/usuarios'} className="botonIngresar">Registrar</Link>
             
         </form>
     )
