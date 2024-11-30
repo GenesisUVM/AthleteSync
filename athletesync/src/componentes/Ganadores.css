@@ -1,0 +1,36 @@
+/*Estilos hijo Ganadores del componente de cada uno de los ganadores*/
+
+.Ganador{
+    width: 60%;
+    background: #fff;
+    border-radius: 2rem;
+    display: grid;
+    margin: auto;
+    padding: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.imgGanador{
+    width: fit-content;
+    grid-column: 1/2;
+}
+.textGanadores{
+    grid-column: 2/2;
+    display: grid;
+}
+
+/*Estilos Contenedor de los 3 ganadores de cada competencia */
+
+.ganadores{
+    position: relative;
+    top: 7rem;
+    width: 80%;
+    background: #85BDBF;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 1rem;
+    padding: 1rem 0.2rem;
+}
