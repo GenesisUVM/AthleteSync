@@ -51,7 +51,7 @@ function FormCompetencias(){
             </select>
             <p>Selecciona si es una competencia de relevo</p>
             <label><input type="radio" value='definitely' checked/>SI</label>
-            <label><input type="radio" value='definitely' />NO</label>
+            <label><input type="radio" value='maybe' />NO</label>
             
         </form>
     )
