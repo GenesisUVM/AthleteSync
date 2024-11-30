@@ -1,3 +1,16 @@
 .crearCompeencia{
     height: 100lvb;
+    background: #85BDBF;
+    display: flex;
+}
+.competenciasCreadas{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 768px){
+    .crearCompeencia{
+        height: 110lvb;
+    }
 }

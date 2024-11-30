@@ -4,7 +4,7 @@ import link1 from '../img/modo-nocturno.png'
 import link2 from '../img/cursor.png'
 import link3 from '../img/lapiz.png'
 import link4 from '../img/basura.png'
-import './ContConfiguracion.css'
+import './Contenedores.css'
 
 
 function ContConfig(){

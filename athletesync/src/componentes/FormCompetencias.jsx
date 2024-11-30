@@ -29,31 +29,35 @@ function FormCompetencias(){
       };
     
     return(
-        <form  className='formCrearCompetencia'>
-            <label>Selecciona la Categoría</label>
-            <select className='categoría' value={selectedOption} onChange={handleChange}>  
-            <option value="">Selecciona una Categoría</option>
-                {categorias.map((option, index) => (
-                    <option key={index} value={option.value}>
-                    {option.label}
-                    </option>
-                ))}
-            </select>
+        <div className='contForm'>
+            <form  className='formCrearCompetencia'>
+                <label>Selecciona la Categoría</label>
+                <select className='categoría' value={selectedOption} onChange={handleChange}>  
+                <option value="">Selecciona una Categoría</option>
+                    {categorias.map((option, index) => (
+                        <option key={index} value={option.value}>
+                        {option.label}
+                        </option>
+                    ))}
+                </select>
 
-            <label>Selecciona sexo de los competidores de la categoria</label>
-            <select className='categoría' value={selectedOption} onChange={handleChange}>  
-            <option value="">Selecciona una Categoría</option>
-                {sexo.map((option, index) => (
-                    <option key={index} value={option.value}>
-                    {option.label}
-                    </option>
-                ))}
-            </select>
-            <p>Selecciona si es una competencia de relevo</p>
-            <label><input type="radio" value='definitely' checked/>SI</label>
-            <label><input type="radio" value='maybe' />NO</label>
-            
-        </form>
+                <label>Selecciona sexo de los competidores de la categoria</label>
+                <select className='categoría' value={selectedOption} onChange={handleChange}>  
+                <option value="">Selecciona una Categoría</option>
+                    {sexo.map((option, index) => (
+                        <option key={index} value={option.value}>
+                        {option.label}
+                        </option>
+                    ))}
+                </select>
+                <p>Selecciona si es una competencia de relevo</p>
+                <label><input type="radio" value='definitely' checked/>SI</label>
+                <label><input type="radio" value='maybe' />NO</label>
+                
+            </form>
+
+            <button type='submit' className="botonCrear">Crear Competencia</button>
+        </div>
     )
 };
 
