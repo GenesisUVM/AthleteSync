@@ -10,7 +10,9 @@ const UsuarioSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.Number, required: true, trim: true,
     },contrasena: {
         type: mongoose.Schema.Types.String, required: true, trim: true, unique: true
-    },rol: {
+    },categoria: {
+        type: mongoose.Schema.Types.String, required: true,
+    },rol:{
         type: mongoose.Schema.Types.String, required: true,
     }
 });

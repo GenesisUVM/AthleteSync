@@ -4,17 +4,17 @@ import {createAccessToken} from '../libs/jwt.js'
 
 
 export const registro = async (req, res) => {
-  const {nombre_usuario, nombre, correo, numero, contrasena, rol} = req.body;
+  const { nombre, correo, numero, contrasena, categoria, rol} = req.body;
     
  try{
       const contrasenaHash = await bcrypt.hash(contrasena, 10)
 
     const newUser = new Usuario({
-        nombre_usuario,
         nombre,
         correo,
         numero,
         contrasena: contrasenaHash,
+        categoria,
         rol
         })
     

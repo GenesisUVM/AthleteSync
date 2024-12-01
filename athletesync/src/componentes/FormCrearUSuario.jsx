@@ -19,7 +19,8 @@ function FormCreaUsuario(){
             <label className='label'>Ingrese Correo<input type="email" name="correo" className="input" {...register( 'correo', { require : true })}/></label>
             <label className='label'>Ingrese Contraseña<input type="text" name="contrasena" className="input" {...register( 'contrasena', { require : true })}/></label>
             <label className='label'>Ingrese Telefono<input type="number" name="telefono" className="input" {...register( 'numero', { require : true })}/></label>
-            <label className='label'>Ingrese Categoria en que compite<input type="text" name="rol" className="input" {...register( 'rol', { require : true })}/></label>
+            <label className='label'>Ingrese Categoria en que compite<input type="text" name="categoria" className="input" {...register( 'categoria', { require : true })}/></label>
+            <label className='label'>Ingrese rol<input type="text" name="rol" className="input" {...register( 'rol', { require : true })}/></label>
             <button type='submit' className="botonIngresar">Ingresar</button>
             <Link to={'/usuarios'} className="botonIngresar">Registrar</Link>
             
