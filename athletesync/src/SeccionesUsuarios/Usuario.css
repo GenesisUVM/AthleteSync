@@ -1,0 +1,10 @@
+.ganadoresUsuarios{
+    display: flex;
+    height: 100vh;
+}
+
+.compDisponibles{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12rem;
+}

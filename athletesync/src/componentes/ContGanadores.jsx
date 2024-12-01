@@ -4,7 +4,7 @@ import Ganador from './Ganador';
 
 
 let ganadorNatacion = {
-    foto: 'adnab',
+    foto: '../img/usuario.png',
     lugar: 'Primer Lugar',
     tiempo:'15:36',
     nombre: 'Kian Vasquez'

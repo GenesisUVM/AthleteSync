@@ -10,6 +10,9 @@ form{
     padding: 3rem 1.2rem;
    
 }
+.formCrear{
+    top: 0;
+}
 
 .formCrearCompetencia{
     display: flex;
@@ -18,6 +21,36 @@ form{
     flex-direction: column;
     background: #C2FCF7;
 }
+
+.modalOverlay{
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.modalCont{
+    position: absolute;
+    width: 100%;
+    top: 25%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 28px;
+    color: #aaa;
+}
+
+.close:hover {
+    color: black;
+}
+
 
 .formCrearCompetencia label, .formCrearCompetencia p{
     font-size: 1.2rem;
@@ -42,6 +75,18 @@ form{
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding: 0.8rem;
+}
+.inputsecond{
+    width: 85%;
+    font-size: 1.2rem;
+    display: flex;
+    margin: auto;
+    border-radius: 0.5rem;
+    border-color: #D5C28F;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+    padding: 0.8rem;
+    background: #D5C28F;
 }
 
 .label{
@@ -80,6 +125,21 @@ form{
     box-shadow: 10px 5px 5px #57737A;
 }
 
+.boton{
+    width: 88%;
+    display: flex;
+    margin: auto;
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    color:#000 ;
+    background: #D5C28F;
+    border-color: #D5C28F;
+    border-radius: 0.5rem;
+    box-shadow: none;
+    text-align: center;
+}
+
 
 
 @media only screen and (min-width: 768px){
@@ -89,6 +149,12 @@ form{
     }
     .formCrearCompetencia{
         top: 15%;
+    }
+    .formModal{
+        width: 60%;
+    }
+    .inputsecond{
+        font-size: 1.5rem;
     }
   
     .label, .formCrearCompetencia label, .formCrearCompetencia p {
@@ -110,6 +176,9 @@ form{
     .botonCrear{
         width: 55%;
         top: 20%;
+        font-size: 1.5rem;
+    }
+    .boton{
         font-size: 1.5rem;
     }
    

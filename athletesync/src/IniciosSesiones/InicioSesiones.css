@@ -42,6 +42,9 @@
     .contLink{
         width: 100%;
     }
+    .crearUsuario{
+        height: 100dvh;
+    }
 }
 
 @media only screen and (min-width: 1200px){
@@ -50,6 +53,9 @@
     }
     .linkContraseña{
         font-size: 1.8rem;
+    }
+    .crearUsuario{
+        height: 130dvh;
     }
  
 }

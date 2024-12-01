@@ -3,13 +3,13 @@ import './Contenedores.css'
 
 
 
-function ContCompetenciasCreadas({datosCompetencia}){
+function ContCompetenciasCreadas({datosCompetencia, onClick }){
     let categoria = datosCompetencia.categoria
     let sexo = datosCompetencia.sexo 
     let tiempo = datosCompetencia.tiempo
     let list = datosCompetencia.competidores
     return(
-        <div className='contCCreadas'>
+        <div className='contCCreadas' onClick={onClick}>
             <p className='textoCompetencias'>Competencia de {categoria}</p>
             <p className='textoCompetencias'>Categoria {sexo}</p>
             <p className='textoCompetencias'>Lista de Competidores</p>

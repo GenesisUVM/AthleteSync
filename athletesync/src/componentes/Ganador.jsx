@@ -3,7 +3,7 @@ import './Ganadores.css'
 
 
 
-function Ganador(infGanadores){
+function Ganador({infGanadores}){
 
     let foto = infGanadores.foto;
     let lugar = infGanadores.lugar;
