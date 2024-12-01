@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Adm.css'
 import NavBar from '../componentes/NavBar';
 import FooterAdm from '../componentes/FooterAdm';
@@ -19,10 +19,27 @@ const atletismo = {
 
 
 function CompetenciasCreadas(){
+    const [competencia, setCompetencia] = useState([]);
+
+    useEffect(() => {
+        const fetchCompetencia = async () => {
+            try {
+                const response = await axios.get('http://localhost:5000/api/datosCompetencia');
+                setCompetencia(response.data);
+            } catch (error) {
+                console.error('Error obteniendo la competencia', error);
+            }
+        };
+
+        fetchCompetencia();
+    }, []);
+    
+    
+
     return(
         <div className='competenciasCreadas'>
         <NavBar />
-        <ContCompetenciasCreadas datosCompetencia={natacion} />
+        <ContCompetenciasCreadas datosCompetencia={competencia} />
         <ContCompetenciasCreadas datosCompetencia={atletismo} />
         <ContCompetenciasCreadas datosCompetencia={atletismo} />
         <FooterAdm />

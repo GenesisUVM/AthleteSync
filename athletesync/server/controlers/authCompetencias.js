@@ -31,3 +31,12 @@ export const competencia = async (req, res) => {
   
    
   };
+
+  export const datosCompetencia = async (req, res) => {
+      try {
+         const competencia = await Competencia.find();
+         res.json(competencia);
+      } catch (error) {
+            res.status(500).send(error);
+      }
+  };
