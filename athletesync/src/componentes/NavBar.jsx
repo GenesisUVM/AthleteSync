@@ -9,7 +9,7 @@ function NavBar(){
     return(
         <nav className="navBar">
             <Link to={'/'}><img src={logo} className='logo' alt='logo'></img></Link>
-            <h2 className='nombre'>ZEN Calisthenics</h2>
+            <h2 className='nombre'>Athelesync</h2>
             <Link to={'/configuracion'}><img src={conf} className='icon' alt='icono configuracion'></img></Link>
         </nav>
     )

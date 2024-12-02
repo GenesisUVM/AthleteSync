@@ -8,11 +8,12 @@
 }
 .crearUsuario{
     background: #C2FCF7;
-    height: 120dvh;
+    height: 150vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    
 }
 
 .contLink{

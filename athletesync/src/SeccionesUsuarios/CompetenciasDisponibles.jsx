@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, {useState} from 'react';
 import './Usuario.css'
 import NavBar from '../componentes/NavBar';
 import FooterUsuarios from '../componentes/FooterUsuarios';
