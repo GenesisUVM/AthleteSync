@@ -13,7 +13,10 @@
     justify-items: center;
 
 }
-
+.ganadores{
+    position: relative;
+    top: 15%;
+}
 .imgIcon{
     width: 2.5rem;
 }

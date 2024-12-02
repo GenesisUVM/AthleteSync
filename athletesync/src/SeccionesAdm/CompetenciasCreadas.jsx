@@ -18,28 +18,28 @@ const atletismo = {
 }
 
 
-function CompetenciasCreadas(){
-    const [competencia, setCompetencia] = useState([]);
+ function CompetenciasCreadas(){
+//     const [competencia, setCompetencia] = useState([]);
 
-    useEffect(() => {
-        const fetchCompetencia = async () => {
-            try {
-                const response = await axios.get('http://localhost:5000/api/datosCompetencia');
-                setCompetencia(response.data);
-            } catch (error) {
-                console.error('Error obteniendo la competencia', error);
-            }
-        };
+//     useEffect(() => {
+//         const fetchCompetencia = async () => {
+//             try {
+//                 const response = await axios.get('http://localhost:5000/api/datosCompetencia');
+//                 setCompetencia(response.data);
+//             } catch (error) {
+//                 console.error('Error obteniendo la competencia', error);
+//             }
+//         };
 
-        fetchCompetencia();
-    }, []);
+//         fetchCompetencia();
+//     }, []);
     
     
 
     return(
         <div className='competenciasCreadas'>
         <NavBar />
-        <ContCompetenciasCreadas datosCompetencia={competencia} />
+        <ContCompetenciasCreadas datosCompetencia={natacion} />
         <ContCompetenciasCreadas datosCompetencia={atletismo} />
         <ContCompetenciasCreadas datosCompetencia={atletismo} />
         <FooterAdm />
