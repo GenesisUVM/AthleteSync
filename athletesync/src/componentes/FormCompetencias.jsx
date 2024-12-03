@@ -9,23 +9,34 @@ function FormCompetencias(){
 
         /*Logica para limpiar el formulario y mostrar un mensjae de exito si se registra correctamente */
         const [formData, setFormData] = useState({
+            competencia:'',
             categoria:'',
-                sexo:'',
-                relevo:''
+            sexo:'',
+            relevo:'',
+            fecha:'',
+            tiempo_limite:''
         });
         const [message, setMessage] = useState('');
     
    //Funcionalidad del Select dinamico
     // OBjeto con los options de ambos select
 
-    const categorias = [
+    const competencias = [
         { value: 'Competencia de aguas abiertas', label: 'Competencia de aguas abiertas'},
         { value: 'Natacion', label: 'Natacion' },
         { value: 'Acuatlon', label: 'Acuatlon' },
         { value: 'Triatlon', label: 'Triatlon' },
         { value: 'Atletismo', label: 'Atletismo' }
       ];
-
+      const categorias = [
+        {value: 'Infatil 6-12', label:'Infantil 6-12'},
+        {value: 'Juvenil 13-17', label:'Juvenil 13-17'},
+        {value: 'Adulto 18-30', label:'Adulto 18-30'},
+        {value: 'Aldulto 31-49', label:'Infantil 31-49'},
+        {value: 'Aldulto 31-49', label:'Infantil 31-49'},
+        {value: 'Aldulto 50-70', label:'Infantil 50-70 '},
+        {value: 'Aldulto 71 en adelante', label:'Infantil 71 en adelante '},
+      ]
       const sexo =[
         {value: 'Femenino', label: 'Femenino'},
         {value: 'Masculino', label: 'Masculino'},
@@ -59,9 +70,12 @@ function FormCompetencias(){
             event.preventDefault();
 
         setFormData({
+            competencia:'',
             categoria:'',
             sexo:'',
-            relevo:''
+            relevo:'',
+            fecha:'',
+            tiempo_limite:''
         });
 
         // Muestra el mensaje de éxito
@@ -76,8 +90,17 @@ function FormCompetencias(){
     return(
         <div className='contForm'>
             <form onSubmit={onSubmit} className='formCrearCompetencia'>
+                <label>Selecciona el deporte de la Competencia</label>
+                <select className='categoria' value={selectedOption} onChange={handleChange} {...register( 'competencia', { require : true })}>  
+                <option value="">Selecciona una Categoría</option>
+                    {competencias.map((option, index) => (
+                        <option key={index} value={option.value}>
+                        {option.label}
+                        </option>
+                    ))}
+                </select>
                 <label>Selecciona la Categoría</label>
-                <select className='categoría' value={selectedOption} onChange={handleChange} {...register( 'categoria', { require : true })}>  
+                <select className='categoria' value={selectedOption} onChange={handleChange} {...register( 'categoria', { require : true })}>  
                 <option value="">Selecciona una Categoría</option>
                     {categorias.map((option, index) => (
                         <option key={index} value={option.value}>
@@ -87,8 +110,8 @@ function FormCompetencias(){
                 </select>
 
                 <label>Selecciona sexo de los competidores de la categoria</label>
-                <select className='categoría' value={selectedOption} onChange={handleChange} {...register( 'sexo', { require : true })} >  
-                <option value="">Selecciona una Categoría</option>
+                <select className='categoria' value={selectedOption} onChange={handleChange} {...register( 'sexo', { require : true })} >  
+                <option value="">Selecciona una el Sexo</option>
                     {sexo.map((option, index) => (
                         <option key={index} value={option.value}>
                         {option.label}
@@ -96,10 +119,12 @@ function FormCompetencias(){
                     ))}
                 </select>
                 <label>Selecciona si es una competencia de relevo</label>
-                <select name="" id="" {...register( 'relevo', { require : true })} value={formData.relevo}> 
-                    <option value="true">Si</option>
-                    <option value="false">No</option>
+                <select className='categoria' name="" id="" {...register( 'relevo', { require : true })} value={formData.relevo}> 
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
                 </select>
+                <label>Ingresa la fecha de la competencia<input className='categoria' typ e='date' {...register( 'fecha', { require : true })} value={formData.fecha}/></label>
+                <label>Ingresa la fecha limite para inscribirse de la competencia<input className='categoria' typ e='date' {...register( 'tiempo_limite', { require : true })} value={formData.tiempo_limite}/></label>
 
                 <button type='submit' className="botonCrear">Crear Competencia</button>
                 

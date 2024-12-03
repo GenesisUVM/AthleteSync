@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './Adm.css'
 import NavBar from '../componentes/NavBar';
 import FooterAdm from '../componentes/FooterAdm';
@@ -19,30 +20,40 @@ const atletismo = {
 
 
  function CompetenciasCreadas(){
-//     const [competencia, setCompetencia] = useState([]);
+    const [competencia, setCompetencia] = useState([]);
 
-//     useEffect(() => {
-//         const fetchCompetencia = async () => {
-//             try {
-//                 const response = await axios.get('http://localhost:5000/api/datosCompetencia');
-//                 setCompetencia(response.data);
-//             } catch (error) {
-//                 console.error('Error obteniendo la competencia', error);
-//             }
-//         };
+    useEffect(() => {
+        const fetchCompetencia = async () => {
+            try {
+                const response = await axios.get('http://localhost:4000/api/datosCompetencia');
+                setCompetencia(response.data);
+            } catch (error) {
+                console.error('Error obteniendo la competencia', error);
+            }
+        };
 
-//         fetchCompetencia();
-//     }, []);
+        fetchCompetencia();
+    }, []);
     
     
 
     return(
         <div className='competenciasCreadas'>
         <NavBar />
-        <ContCompetenciasCreadas datosCompetencia={natacion} />
-        <ContCompetenciasCreadas datosCompetencia={atletismo} />
-        <ContCompetenciasCreadas datosCompetencia={atletismo} />
-        <FooterAdm />
+        {competencia.length > 0 ? (
+                competencia.map(item => (
+                    <ContCompetenciasCreadas 
+                        competencia={item.competencia} 
+                        categoria={item.categoria} 
+                        sexo={item.sexo}
+                        relevo={item.relevo}
+                        fecha={item.fecha} 
+                        tiempo_limite={item.tiempo_limite} 
+                    />
+                ))
+            ) : (
+                <p>No hay registros disponibles.</p>
+            )}<FooterAdm />
         </div>
     )
 };

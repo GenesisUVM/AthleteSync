@@ -4,23 +4,29 @@ import {Competencia} from '../models/competenciasModel.js'
 
 
 export const competencia = async (req, res) => {
-    const {categoria, sexo, relevo} = req.body;
+    const {competencia, categoria, sexo, relevo, fecha, tiempo_limite} = req.body;
       
    try{
   
       const newCompetencia = new Competencia({
-          categoria,
-          sexo,
-          relevo
-          })
+         competencia,
+         categoria,
+         sexo,
+         relevo,
+         fecha,
+         tiempo_limite
+         })
       
-        const competenciaSaved = await newCompetencia.save();
+      const competenciaSaved = await newCompetencia.save();
   
         
-        res.json({
-            categoria: competenciaSaved.categoria,
-           sexo: competenciaSaved.sexo,
-           relevo: competenciaSaved.relevo
+      res.json({
+         competencia: competenciaSaved.competencia,
+         categoria: competenciaSaved.categoria,
+         sexo: competenciaSaved.sexo,
+         relevo: competenciaSaved.relevo,
+         fecha: competenciaSaved.fecha,
+         tiempo_limite: competenciaSaved.tiempo_limite
         });
   
      
