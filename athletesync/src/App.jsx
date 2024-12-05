@@ -11,7 +11,7 @@ import CrearCompetencia from './SeccionesAdm/CrearCompetencia';
 import Ganadores from './SeccionesAdm/Ganadores';
 import CompetenciasDisponibles from './SeccionesUsuarios/CompetenciasDisponibles';
 import CompetenciasFinalizadas from './SeccionesUsuarios/CompetenciasFinalizadas';
-
+import RegistroAthletas from './SeccionesUsuarios/RegistroAthletas';
 
 function App() {
    return (
@@ -26,6 +26,7 @@ function App() {
         <Route path='/ganadores' element={<Ganadores  />} />
         <Route path='/competenciasDisponibles' element={<CompetenciasDisponibles  />} />
         <Route path='/competenciasFinalizadas' element={<CompetenciasFinalizadas  />} />
+        <Route path='/registroAthletas' element={<RegistroAthletas  />} />
 
       </Routes> 
     </BrowserRouter> 

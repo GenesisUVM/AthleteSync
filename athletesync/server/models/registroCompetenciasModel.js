@@ -6,7 +6,10 @@ const regisCompetenciaSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.String, required: true, trim: true,
     },edad: {
         type: mongoose.Schema.Types.Number, required: true, trim: true,
-    },metodo_pago: {
+    },competencia:{
+        type: mongoose.Schema.Types.ObjectId, required: true, trim:true,
+    },
+    metodo_pago: {
         type: mongoose.Schema.Types.String, required: true, trim: true,
     }
 });

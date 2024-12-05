@@ -3,7 +3,7 @@ import './Usuario.css'
 import NavBar from '../componentes/NavBar';
 import FooterUsuarios from '../componentes/FooterUsuarios';
 import ContCompetenciasCreadas from '../componentes/ContCompetenciasCreadas';
-import ModalForm from '../componentes/ModalForm';
+
 
 const natacion = {
     categoria: 'Natacion',
@@ -14,23 +14,15 @@ const natacion = {
 
 
 function CompetenciasDisponibles(){
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    }
+   
 
     return(
         <div className='compDisponibles'>
         <NavBar />
-        <ContCompetenciasCreadas datosCompetencia={natacion} onClick={openModal} />
-        <ContCompetenciasCreadas datosCompetencia={natacion} onClick={openModal} />
-        <ContCompetenciasCreadas datosCompetencia={natacion} onClick={openModal} />
-        <ModalForm isOpen={isModalOpen} onClose={closeModal}/>
+        <ContCompetenciasCreadas datosCompetencia={natacion} />
+        <ContCompetenciasCreadas datosCompetencia={natacion} />
+        <ContCompetenciasCreadas datosCompetencia={natacion} />
+
         <FooterUsuarios />
         </div>
     )

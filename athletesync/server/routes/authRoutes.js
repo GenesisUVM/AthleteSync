@@ -1,7 +1,7 @@
 import {Router} from "express"
 import {registro, login, logout} from '../controlers/authCrontolers.js'
 import {competencia, datosCompetencia} from '../controlers/authCompetencias.js'
-import {registroCompetencias} from '../controlers/authRegistrosComp.js'
+import {registroCompetencias, datosRegisrosCompetencia} from '../controlers/authRegistrosComp.js'
 
 const router = Router()
 
@@ -11,5 +11,6 @@ router.post('/logout' , logout)
 router.post('/competencia' , competencia)
 router.post('/registroCompetencia' , registroCompetencias)
 router.get('/datosCompetencia' , datosCompetencia)
+router.get('/datosRegisrosCompetencia' , datosRegisrosCompetencia)
 
 export default router

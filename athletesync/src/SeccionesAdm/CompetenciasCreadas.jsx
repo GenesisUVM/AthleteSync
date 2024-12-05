@@ -4,19 +4,8 @@ import './Adm.css'
 import NavBar from '../componentes/NavBar';
 import FooterAdm from '../componentes/FooterAdm';
 import ContCompetenciasCreadas from '../componentes/ContCompetenciasCreadas';
+import ModalForm from '../componentes/ModalForm';
 
-const natacion = {
-    categoria: 'Natacion',
-    sexo:'Femenino',
-    competidores:['Indira Hassan','Camila Sanchez', 'Zoe Castro','Giulia Rossi','Thalia Cordero','Sarina Ortega'],
-    tiempo:'27/11/24'
-}
-const atletismo = {
-    categoria: 'Atletismo',
-    sexo:'Masculino',
-    competidores:['Sergio Romero','Andres Morales', 'Roberto Jimenez','Christian Ruiz','ALejandro Garcia','Miguel Torres'],
-    tiempo:'15/12/24'
-}
 
 
  function CompetenciasCreadas(){
@@ -34,6 +23,8 @@ const atletismo = {
 
         fetchCompetencia();
     }, []);
+
+    
     
     
 
@@ -43,17 +34,21 @@ const atletismo = {
         {competencia.length > 0 ? (
                 competencia.map(item => (
                     <ContCompetenciasCreadas 
+                        key={item._id}
                         competencia={item.competencia} 
                         categoria={item.categoria} 
                         sexo={item.sexo}
                         relevo={item.relevo}
                         fecha={item.fecha} 
                         tiempo_limite={item.tiempo_limite} 
+                        onClick={openModal}
                     />
                 ))
             ) : (
                 <p>No hay registros disponibles.</p>
-            )}<FooterAdm />
+            )}
+            
+            <FooterAdm />
         </div>
     )
 };

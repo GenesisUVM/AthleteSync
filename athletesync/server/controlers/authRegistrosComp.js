@@ -3,7 +3,7 @@ import {RegisCompetencia} from '../models/registroCompetenciasModel.js'
 
 
 export const registroCompetencias = async (req, res) => {
-  const {nombre, edad, metodo_pago} = req.body;
+  const {nombre, edad, competencia, metodo_pago} = req.body;
     
  try{
    
@@ -11,6 +11,7 @@ export const registroCompetencias = async (req, res) => {
     const newRegistro = new RegisCompetencia({
         nombre,
         edad,
+        competencia,
         metodo_pago
         })
     
@@ -20,6 +21,7 @@ export const registroCompetencias = async (req, res) => {
       res.json({
          nombre: registroSaved.nombre,
          edad: registroSaved.edad,
+         competencia: registroSaved.competencia,
          metodo_pago: registroSaved.metodo_pago
       });
 
@@ -30,4 +32,13 @@ export const registroCompetencias = async (req, res) => {
  }
 
  
+};
+
+export const datosRegisrosCompetencia = async (req, res) => {
+   try {
+      const registroCompetencia = await RegisCompetencia.find();
+      res.json(registroCompetencia);
+   } catch (error) {
+         res.status(500).send(error);
+   }
 };

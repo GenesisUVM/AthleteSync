@@ -88,7 +88,7 @@ function FormCompetencias(){
         })
     
     return(
-        <div className='contForm'>
+   
             <form onSubmit={onSubmit} className='formCrearCompetencia'>
                 <label>Selecciona el deporte de la Competencia</label>
                 <select className='categoria' value={selectedOption} onChange={handleChange} {...register( 'competencia', { require : true })}>  
@@ -131,7 +131,7 @@ function FormCompetencias(){
             </form>
 
             
-        </div>
+     
     )
 };
 
