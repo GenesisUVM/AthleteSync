@@ -40,26 +40,46 @@ function CompetenciasDisponibles(){
         const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
         return date.toLocaleDateString('es-ES', options);
     };
+
+    // Categorías definidas
+    const categorias = [
+        'competencias de aguas abiertas',
+        'natación',
+        'acuatlon',
+        'triatlon',
+        'atletismo'
+    ];
+
+    // Agrupar competencias por categoría
+    const groupedCompetencias = categorias.reduce((acc, categoria) => {
+        acc[categoria] = competencia.filter(item => item.categoria === categoria);
+        return acc;
+    }, {});
     
     return(
         <div className='compDisponibles'>
         <NavBar />
-        {competencia.length > 0 ? (
-                competencia.map(item => (
-                    <ContCompetenciasCreadas 
-                        key={item._id}
-                        competencia={item.competencia} 
-                        categoria={item.categoria} 
-                        sexo={item.sexo}
-                        relevo={item.relevo}
-                        fecha={formatDate(item.fecha)} 
-                        tiempo_limite={formatDate(item.tiempo_limite)} 
-                        atletas={atletas.filter(atleta => atleta.competencia === item._id)}
-                    />
-                ))
-            ) : (
-                <p>No hay registros disponibles.</p>
-            )}
+        {categorias.map(categoria => (
+                <div key={categoria}>
+                    <h2>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</h2>
+                    {groupedCompetencias[categoria].length > 0 ? (
+                        groupedCompetencias[categoria].map(item => (
+                            <ContCompetenciasCreadas 
+                                key={item._id}
+                                competencia={item.competencia} 
+                                categoria={item.categoria} 
+                                sexo={item.sexo}
+                                relevo={item.relevo}
+                                fecha={formatDate(item.fecha)} 
+                                tiempo_limite={formatDate(item.tiempo_limite)} 
+                                atletas={atletas.filter(atleta => atleta.competencia === item._id)}
+                            />
+                        ))
+                    ) : (
+                        <p>No hay competencias registradas en esta categoría.</p>
+                    )}
+                </div>
+            ))}
         <FooterUsuarios />
         </div>
     )

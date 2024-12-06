@@ -5,6 +5,8 @@ import FooterUsuarios from '../componentes/FooterUsuarios';
 import ContGanadores from '../componentes/ContGanadores';
 
 
+//Seccion usuarios
+
 function CompetenciasFinalizadas(){
     return(
         <div className='ganadoresUsuarios'>

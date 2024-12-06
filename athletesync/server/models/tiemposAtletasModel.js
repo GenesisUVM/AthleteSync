@@ -8,6 +8,8 @@ const TiemposSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId, required: true, trim: true,
     },tiempo: {
         type: mongoose.Schema.Types.String, required: true, trim: true,
+    },posicion:{
+        type: mongoose.Schema.Types.String, required:true,
     }
 });
 

@@ -3,14 +3,15 @@ import {Tiempo} from '../models/tiemposAtletasModel.js'
 
 
 export const tiempo = async (req, res) => {
-    const {competencia, nombre, tiempo} = req.body;
+    const {competencia, nombre, tiempo,posicion} = req.body;
       
    try{
   
       const newTiempo = new Tiempo({
          competencia,
          nombre,
-         tiempo
+         tiempo,
+         posicion
          })
       
       const tiempoSaved = await newTiempo.save();
@@ -19,7 +20,8 @@ export const tiempo = async (req, res) => {
       res.json({
          competencia: tiempoSaved.competencia,
          nombre: tiempoSaved.nombre,
-         tiempo: tiempoSaved.tiempo
+         tiempo: tiempoSaved.tiempo,
+         posicion: tiempoSaved.posicion
         });
   
      
@@ -30,3 +32,12 @@ export const tiempo = async (req, res) => {
   
    
   };
+
+  export const datosGanadores = async (req, res) => {
+   try {
+      const ganadores = await Tiempo.find();
+      res.json(ganadores);
+   } catch (error) {
+         res.status(500).send(error);
+   }
+};
