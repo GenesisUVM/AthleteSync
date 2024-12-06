@@ -4,7 +4,7 @@ import './Contenedores.css'
 
 
 
-function ContCompetenciasCreadas({competencia, categoria, sexo, fecha,tiempo_limite}){
+function ContCompetenciasCreadas({competencia, categoria, sexo, fecha,tiempo_limite,atletas}){
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -18,11 +18,12 @@ function ContCompetenciasCreadas({competencia, categoria, sexo, fecha,tiempo_lim
             <p className='textoCompetencias'>Categoria de {categoria}</p>
             <p className='textoCompetencias'>Sexo {sexo}</p>
             <p className='textoCompetencias'>Lista de Competidores</p>
-            <ul className='textoCompetencias'>
-                {//list.map((competidor, index) => (
-                //<li key={index}>{competidor}</li>
-                //))
-                }
+            <ul>
+                {atletas.map(atleta => (
+                    <li key={atleta._id}>
+                        {atleta.nombre} - {atleta.edad} años
+                    </li>
+                ))}
             </ul>
             <p className='textoCompetencias'>Tiempo limite de inscripcion: {tiempo_limite}</p>
         

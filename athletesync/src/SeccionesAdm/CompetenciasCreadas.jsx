@@ -10,6 +10,7 @@ import ContCompetenciasCreadas from '../componentes/ContCompetenciasCreadas';
 
  function CompetenciasCreadas(){
     const [competencia, setCompetencia] = useState([]);
+    const [atletas, setAtletas] = useState([]);
 
     useEffect(() => {
         const fetchCompetencia = async () => {
@@ -20,8 +21,17 @@ import ContCompetenciasCreadas from '../componentes/ContCompetenciasCreadas';
                 console.error('Error obteniendo la competencia', error);
             }
         };
+        const fetchAletas = async () => {
+            try {
+                const response = await axios.get('http://localhost:4000/api/datosRegisrosCompetencia');
+                setAtletas(response.data);
+            } catch (error) {
+                console.error('Error obteniendo la competencia', error);
+            }
+        };
 
         fetchCompetencia();
+        fetchAletas();
     }, []);
 
     //Cambiar el formato de la fecha a solo dia, mes y año
@@ -46,12 +56,14 @@ import ContCompetenciasCreadas from '../componentes/ContCompetenciasCreadas';
                         relevo={item.relevo}
                         fecha={formatDate(item.fecha)} 
                         tiempo_limite={formatDate(item.tiempo_limite)} 
+                        atletas={atletas.filter(atleta => atleta.competencia === item._id)}
                         
                     />
                 ))
             ) : (
                 <p>No hay registros disponibles.</p>
             )}
+            
             
             <FooterAdm />
         </div>
