@@ -16,7 +16,12 @@ form{
    
 }
 
-
+.formTiempo{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    top: 15%;
+}
 .formCrearCompetencia{
     display: flex;
     top: 10%;

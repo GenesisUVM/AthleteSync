@@ -2,13 +2,13 @@ import React from 'react';
 import './Usuario.css'
 import NavBar from '../componentes/NavBar';
 import FooterAdm from '../componentes/FooterAdm';
-import ModalForm from '../componentes/ModalForm';
+import FormRegistroAtletas from '../componentes/FormRegistroAtletas';
 
 function RegistroAthletas(){
     return(
         <div className='registroAtletas'>
         <NavBar />
-        <ModalForm />
+        <FormRegistroAtletas />
         <FooterAdm />
         </div>
     )

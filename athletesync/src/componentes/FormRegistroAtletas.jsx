@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { registerCompetenciaRequest } from '../api/registerAuth.js';
 
-function ModalForm() {
+function FormRegistroAtletas() {
     const { register, handleSubmit, reset } = useForm();
     const [message, setMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
@@ -111,4 +111,4 @@ function ModalForm() {
     );
 }
 
-export default ModalForm;
+export default FormRegistroAtletas;

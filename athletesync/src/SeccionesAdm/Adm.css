@@ -12,6 +12,11 @@
 .seccionGanadores{
     display: flex;
     height: 140vh;
+    flex-direction: column;
+}
+
+.seccionTiempo{
+    height: 100vh;
 }
 
 @media only screen and (min-width: 768px){
