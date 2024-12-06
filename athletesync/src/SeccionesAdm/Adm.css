@@ -11,7 +11,7 @@
 }
 .seccionGanadores{
     display: flex;
-    height: 120vh;
+    height: 140vh;
 }
 
 @media only screen and (min-width: 768px){

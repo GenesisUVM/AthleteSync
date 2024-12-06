@@ -2,7 +2,7 @@ import React from 'react';
 import './Forms.css'
 import  { useState } from 'react';
 import {useForm} from 'react-hook-form'
-import {competenciaRequest} from '../api/compAuth.js'
+import {competenciaRequest} from '../api/compPostAuth.js'
 
 
 function FormCompetencias(){

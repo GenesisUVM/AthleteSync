@@ -4,8 +4,8 @@ import './Adm.css'
 import NavBar from '../componentes/NavBar';
 import FooterAdm from '../componentes/FooterAdm';
 import ContCompetenciasCreadas from '../componentes/ContCompetenciasCreadas';
-import ModalForm from '../componentes/ModalForm';
 
+//Componente seccion Administrativa
 
 
  function CompetenciasCreadas(){
@@ -24,8 +24,13 @@ import ModalForm from '../componentes/ModalForm';
         fetchCompetencia();
     }, []);
 
+    //Cambiar el formato de la fecha a solo dia, mes y año
     
-    
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+        return date.toLocaleDateString('es-ES', options);
+    };
     
 
     return(
@@ -39,8 +44,8 @@ import ModalForm from '../componentes/ModalForm';
                         categoria={item.categoria} 
                         sexo={item.sexo}
                         relevo={item.relevo}
-                        fecha={item.fecha} 
-                        tiempo_limite={item.tiempo_limite} 
+                        fecha={formatDate(item.fecha)} 
+                        tiempo_limite={formatDate(item.tiempo_limite)} 
                         
                     />
                 ))
