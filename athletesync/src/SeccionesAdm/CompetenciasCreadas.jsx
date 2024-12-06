@@ -41,7 +41,7 @@ import ModalForm from '../componentes/ModalForm';
                         relevo={item.relevo}
                         fecha={item.fecha} 
                         tiempo_limite={item.tiempo_limite} 
-                        onClick={openModal}
+                        
                     />
                 ))
             ) : (

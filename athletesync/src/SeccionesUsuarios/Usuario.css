@@ -8,3 +8,9 @@
     flex-direction: column;
     margin-bottom: 12rem;
 }
+.registroAtletas{
+    display: flex;
+    justify-content: center;
+    height: 130vh;
+
+}

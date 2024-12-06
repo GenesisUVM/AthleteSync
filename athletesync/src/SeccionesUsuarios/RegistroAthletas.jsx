@@ -6,11 +6,11 @@ import ModalForm from '../componentes/ModalForm';
 
 function RegistroAthletas(){
     return(
-        <>
+        <div className='registroAtletas'>
         <NavBar />
         <ModalForm />
         <FooterAdm />
-        </>
+        </div>
     )
 };
 

@@ -123,8 +123,8 @@ function FormCompetencias(){
                     <option value="si">Si</option>
                     <option value="no">No</option>
                 </select>
-                <label>Ingresa la fecha de la competencia<input className='categoria' typ e='date' {...register( 'fecha', { require : true })} value={formData.fecha}/></label>
-                <label>Ingresa la fecha limite para inscribirse de la competencia<input className='categoria' typ e='date' {...register( 'tiempo_limite', { require : true })} value={formData.tiempo_limite}/></label>
+                <label>Ingresa la fecha de la competencia<input className='categoria' type='date' {...register( 'fecha', { require : true })} value={formData.fecha}/></label>
+                <label>Ingresa la fecha limite para inscribirse de la competencia<input className='categoria' type='date' {...register( 'tiempo_limite', { require : true })} value={formData.tiempo_limite}/></label>
 
                 <button type='submit' className="botonCrear">Crear Competencia</button>
                 
