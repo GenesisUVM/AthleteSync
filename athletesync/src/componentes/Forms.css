@@ -19,7 +19,7 @@ form{
 
 .formCrearCompetencia{
     display: flex;
-    top: 15%;
+    top: 10%;
     margin: auto;
     flex-direction: column;
     background: #C2FCF7;
@@ -123,12 +123,12 @@ form{
     display: flex;
     width: 80%;
     margin: auto;
-    background: #C2FCF7;
+    background: #85BDBF;
     border-radius: 2rem;
     padding: 1rem;
     justify-content: center;
     border: none;
-    box-shadow: 10px 5px 5px #57737A;
+   
 }
 
 .boton{
