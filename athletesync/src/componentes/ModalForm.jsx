@@ -86,7 +86,7 @@ function ModalForm() {
                 <label className='label'>Nombre del atleta<input className='inputsecond' type="text" {...register('nombre', { required: true })} /></label>
                 <label className='label'>Edad del atleta<input className='inputsecond' type="number" {...register('edad', { required: true })} /></label>
                 <label className='label'>Competencia a inscribirse 
-                    <select className='categoria' value={selectedCompetencia} onChange={handleSelectChange} {...register('competencia', { required: true })}>
+                    <select className='categoria'  onChange={handleSelectChange} {...register('competencia', { required: true })}>
                         <option value="">Seleccione una competencia</option>
                         {competencias.map(competencia => (
                             <option key={competencia._id} value={competencia._id}>

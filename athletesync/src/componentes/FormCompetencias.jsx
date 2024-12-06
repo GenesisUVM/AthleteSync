@@ -50,7 +50,7 @@ function FormCompetencias(){
 
       /*Registro del formulario*/
       
-        const onSubmit = handleSubmit(async(values,event) => {
+        const onSubmit = handleSubmit(async(values) => {
             console.log(values);
             const res = await competenciaRequest(values)
             console.log(res)
