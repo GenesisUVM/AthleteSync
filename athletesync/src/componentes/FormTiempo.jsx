@@ -92,7 +92,7 @@ function FormTiempo(){
                 <select className='categoria' onChange={handleSelectChangeComp}  {...register( 'competencia', { require : true })}>  
                 <option value="">Selecciona una Competencia</option>
                     {competencias.map(competencia => (
-                            <option key={competencia._id} value={competencia._id}>
+                            <option key={competencia._id} value={competencia.competencia}>
                                 {competencia.competencia}
                             </option>
                         ))}
@@ -101,7 +101,7 @@ function FormTiempo(){
                 <select className='categoria' onChange={handleSelectChangeAtle} {...register( 'nombre', { require : true })}>  
                 <option value="">Selecciona nombre del atleta</option>
                     {atletas.map(atletas => (
-                            <option key={atletas._id} value={atletas._id}>
+                            <option key={atletas._id} value={atletas.nombre}>
                                 {atletas.nombre}
                             </option>
                         ))}
