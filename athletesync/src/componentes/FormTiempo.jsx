@@ -61,6 +61,13 @@ function FormTiempo(){
             setErrorMessage('Este registro ya existe. Por favor, verifica los datos.');
             return;
         }
+        const lugaresOcupados = competencias.filter(record => record.competencia === selectedCompetencia)
+        .map(record => record.posicion);
+
+        if (lugaresOcupados.includes(values.posicion)) {
+            setErrorMessage(`Ya hay un atleta registrado en ${values.posicion}.`);
+            return;
+        }
       
         try {
             const res = await registerTiempoRequest(values);
@@ -73,13 +80,13 @@ function FormTiempo(){
                 // onClose(); 
             }, 3000);
         } catch (error) {
-            console.error("Error al registrar la competencia:", error);
+            console.error("Error al registrar la competencia:", error.response ? error.response.data : error);
             setErrorMessage('Error al registrar la competencia. Inténtalo de nuevo.');
         }
     });
     
     return(
-   
+   <>
             <form onSubmit={onSubmit} className='formTiempo'>
                 <label>Selecciona la Competencia en la que participo el atleta</label>
                 <select className='categoria' onChange={handleSelectChangeComp}  {...register( 'competencia', { require : true })}>  
@@ -110,9 +117,10 @@ function FormTiempo(){
                 <button type='submit' className="boton">Crear Competencia</button>
                 
             </form>
-
+            {errorMessage}
+            {message}
             
-     
+            </>
     )
 };
 

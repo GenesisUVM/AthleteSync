@@ -15,9 +15,15 @@
 }
 .ganadores{
     position: relative;
-    top: 15%;
+}.botonMas{
+    display: flex;
+    margin: auto;
+    padding: 1rem;
 }
 .imgIcon{
+    width: 2.5rem;
+}
+.imgMas{
     width: 2.5rem;
 }
 

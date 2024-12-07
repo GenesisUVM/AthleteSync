@@ -11,7 +11,7 @@
 }
 .seccionGanadores{
     display: flex;
-    height: 140vh;
+    height: 170vh;
     flex-direction: column;
 }
 

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link} from 'react-router-dom';
 import mas from '../img/mas.png'
+import './Contenedores.css'
 
 function EnlaceTiempos(){
     return(
-        <div className='boton'>
-            <Link to={'/registroTiempoAthletas'}>{mas}</Link>
+        <div className='botonMas'>
+            <Link to={'/registroTiempoAthletas'}><img src={mas} alt='Simbolo mas' className='imgMas' /></Link>
         </div>
     )
 };
