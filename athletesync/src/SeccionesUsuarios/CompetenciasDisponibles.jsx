@@ -15,6 +15,7 @@ function CompetenciasDisponibles(){
         const fetchCompetencia = async () => {
             try {
                 const response = await axios.get('http://localhost:4000/api/datosCompetencia');
+                console.log(response.data);
                 setCompetencia(response.data);
             } catch (error) {
                 console.error('Error obteniendo la competencia', error);
@@ -23,6 +24,7 @@ function CompetenciasDisponibles(){
         const fetchAletas = async () => {
             try {
                 const response = await axios.get('http://localhost:4000/api/datosRegisrosCompetencia');
+                console.log(response.data);
                 setAtletas(response.data);
             } catch (error) {
                 console.error('Error obteniendo la competencia', error);
@@ -42,17 +44,17 @@ function CompetenciasDisponibles(){
     };
 
     // Categorías definidas
-    const categorias = [
-        'competencias de aguas abiertas',
-        'natación',
-        'acuatlon',
-        'triatlon',
-        'atletismo'
+    const categorias  = [
+        'Competencia de aguas abiertas',
+        'Natacion',
+        'Acuatlon',
+        'Triatlon',
+        'Atletismo'
     ];
 
     // Agrupar competencias por categoría
     const groupedCompetencias = categorias.reduce((acc, categoria) => {
-        acc[categoria] = competencia.filter(item => item.categoria === categoria);
+        acc[categoria] = competencia.filter(item => item.competencia.toLowerCase() === categoria.toLowerCase());
         return acc;
     }, {});
     
@@ -61,7 +63,7 @@ function CompetenciasDisponibles(){
         <NavBar />
         {categorias.map(categoria => (
                 <div key={categoria}>
-                    <h2>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</h2>
+                    <h2 className='tituloCategorias'>{categoria.charAt(0).toUpperCase() + categoria.slice(1)}</h2>
                     {groupedCompetencias[categoria].length > 0 ? (
                         groupedCompetencias[categoria].map(item => (
                             <ContCompetenciasCreadas 
