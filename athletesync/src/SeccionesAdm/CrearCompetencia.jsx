@@ -9,6 +9,7 @@ function CrearCompetencia(){
     return(
         <div className='crearCompeencia'>
         <NavBar />
+        <h2 className='titulos'>Crear Competencia</h2>
         <FormCompetencias />
         <FooterAdm />
         </div>

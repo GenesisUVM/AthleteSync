@@ -8,6 +8,7 @@ function RegistroAthletas(){
     return(
         <div className='registroAtletas'>
         <NavBar />
+        <h2 className='titulos'>Registro Atletas</h2>
         <FormRegistroAtletas />
         <FooterAdm />
         </div>

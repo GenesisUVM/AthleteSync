@@ -122,14 +122,8 @@ function FormTiempo(){
                     ))}
                 </select>
                 <label>Ingresa el tiempo del atleta en la competencia<input className='categoria' type='text' {...register( 'tiempo', { require : true })} /></label>
-                <label>Ingresa lugar en el que quedo el atleta 'tiempo', <select name="" id="" className='categoria' type='text' {...register( 'posicion', { require : true })}>
-                    <option value="">Selecciona la posicion de llegada </option>
-                    <option value="Primer Lugar"> Primer Lugar</option>
-                    <option value="Segundo Lugar">Segundo Lugar</option>
-                    <option value=" Tercer Lugar">Tercer Lugar</option>
-                    </select></label>
-        
-                <button type='submit' className="boton">Crear Competencia</button>
+                
+                <button type='submit' className="boton">Registrar Tiempo</button>
                 
             </form>
             {errorMessage}

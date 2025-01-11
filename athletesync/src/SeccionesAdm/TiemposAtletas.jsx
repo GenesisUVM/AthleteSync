@@ -10,6 +10,7 @@ function TiempoAtletas(){
     return(
         <div className='seccionTiempo'>
         <NavBar />
+        <h2 className='titulos'>Registro Tiempos Atletas</h2>
         <FormTiempo />
         <FooterAdm />
         </div>
