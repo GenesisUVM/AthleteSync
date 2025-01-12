@@ -1,5 +1,5 @@
 .crearCompeencia{
-    height: 150vh;
+    position: relative;
     background: #85BDBF;
     display: flex;
     flex-direction: column;

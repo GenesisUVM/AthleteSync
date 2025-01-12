@@ -24,11 +24,10 @@ form{
 }
 .formCrearCompetencia{
     display: flex;
-    top: 10%;
+    top: 8rem;
     margin: auto;
     flex-direction: column;
     background: #C2FCF7;
-    margin-top: 0;
 }
 
 .modalOverlay{
@@ -40,7 +39,7 @@ form{
 }
 .modalCont{
     position: absolute;
-    top: 15%;
+    top: 22%;
     display: flex;
     margin: auto;
     justify-content: center;
