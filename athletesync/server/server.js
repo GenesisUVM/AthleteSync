@@ -1,5 +1,5 @@
 
-import {connectDB} from './Database.js'
+import {connectDB} from './database.js'
  import express from "express"
 //  import mongoose from "mongoose";
 import morgan from "morgan"
