@@ -1,19 +1,32 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import { VitePWA } from "vite-plugin-pwa";
 
-
-// https://vite.dev/config/
 export default defineConfig({
-  build: {
-    // genera el archivo .vite/manifest.json en outDir
-    manifest: true,
-    rollupOptions: {
-      // sobreescribe la entrada por defecto .html
-      input: './src/main.jsx',
-    },
-  },
-  server: {
-    proxy: {
-      '/api': 'http://localhost:4000', 
-    },
-  },
-})
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: "autoUpdate",
+      manifest: {
+        name: "Mi PWA con React y Vite",
+        short_name: "PWA",
+        start_url: "/",
+        display: "standalone",
+        background_color: "#ffffff",
+        theme_color: "#000000",
+        icons: [
+          {
+            src: "/icon-192x192.png",
+            sizes: "192x192",
+            type: "image/png"
+          },
+          {
+            src: "/icon-512x512.png",
+            sizes: "512x512",
+            type: "image/png"
+          }
+        ]
+      }
+    })
+  ]
+});
